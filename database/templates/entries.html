@@ -1,0 +1,33 @@
+<html>
+
+<header>Southwest Oral Histories</header>
+
+<body>
+
+
+    <form method="get">
+
+        {{ filter.form.as_p }}
+
+        <button type="submit">Search</button>
+
+        <button><a href="{% url 'database-search' %}"> Clear selections </a></button>
+    </form>
+
+    <ul>
+
+        {% for entry in filter.qs %}
+
+            <li> {{ entry.narrator}}</li>
+
+        {% empty %}
+
+            <li> No matching oral history. </li>
+        
+        {% endfor %}
+    </ul>
+</body>
+
+
+
+</html>
