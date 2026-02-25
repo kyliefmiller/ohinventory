@@ -27,6 +27,7 @@ class EntryFilter(django_filters.FilterSet):
         method='filter_by_comma_separated'
     )
     narrator = django_filters.CharFilter(lookup_expr='icontains')
+    year = django_filters.RangeFilter()
     location = django_filters.MultipleChoiceFilter(
         choices=get_choices_for_field(OHEntry, 'location'),
         method='filter_by_comma_separated'
@@ -39,7 +40,7 @@ class EntryFilter(django_filters.FilterSet):
 
     class Meta:
         model = OHEntry
-        fields = ['institution', 'medium', 'access', 'narrator', 'location', 'topic','description']
+        fields = ['institution', 'medium', 'access', 'narrator', 'year', 'location', 'topic','description']
 # 'year'
        
 
