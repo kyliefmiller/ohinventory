@@ -6,8 +6,9 @@
 
 
     <form method="get">
-
         {{ filter.form.as_p }}
+
+        
 
         <button type="submit">Search</button>
 
@@ -16,9 +17,22 @@
 
     <ul>
 
-        {% for entry in filter.qs %}
+        
 
-            <li> {{ entry.narrator}}</li>
+            <table> 
+                <thead>
+                    <th>Narrator</th>
+                    <th>Year</th>
+                </thead>
+                {% for entry in filter.qs %}
+                    <table>
+                        <tr>
+                            <td> {{ entry.narrator}} </td>
+                            <td> - {{ entry.year }} </td>
+                            <td> <button><a href="/database/oral-history/{{entry.id}}"> See more </a></button> </td>
+                        </tr> 
+                    </table> 
+            </table>
 
         {% empty %}
 

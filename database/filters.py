@@ -1,6 +1,7 @@
 import django_filters
 from .models import OHEntry
 from django.db.models import Q
+from django.forms.widgets import CheckboxSelectMultiple
 
 def get_choices_for_field(model, field_name):
     def get_choices():
@@ -20,17 +21,19 @@ class EntryFilter(django_filters.FilterSet):
     institution = django_filters.ChoiceFilter(choices=OHEntry.Institution.choices, lookup_expr='exact', empty_label='Any')
     medium = django_filters.MultipleChoiceFilter(
         choices=get_choices_for_field(OHEntry, 'medium'),
-        method='filter_by_comma_separated'
+        method='filter_by_comma_separated',
+        widget=CheckboxSelectMultiple
     )
     access = django_filters.MultipleChoiceFilter(
         choices=get_choices_for_field(OHEntry, 'access'),
-        method='filter_by_comma_separated'
+        method='filter_by_comma_separated',
+        widget=CheckboxSelectMultiple
     )
     narrator = django_filters.CharFilter(lookup_expr='icontains')
     year = django_filters.RangeFilter()
     location = django_filters.MultipleChoiceFilter(
         choices=get_choices_for_field(OHEntry, 'location'),
-        method='filter_by_comma_separated'
+        method='filter_by_comma_separated',
     )
     topic = django_filters.MultipleChoiceFilter(
         choices=get_choices_for_field(OHEntry, 'topic'),

@@ -9,3 +9,6 @@ def entry_list(request):
     entry_filter = EntryFilter(request.GET, queryset=entries)
 
     return render(request, 'entries.html', {'filter': entry_filter})
+
+def single_entry(request, id=None):
+    return render(request, 'single-entry.html', {'entry': OHEntry.objects.get(pk=id)}) 
