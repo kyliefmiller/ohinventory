@@ -1,33 +1,42 @@
-<p>
-    Entry ID: {{ entry.id }}
-</p>
-<p>
-    Insitution: {{ entry.institution }}
-</p>
-<p>
-    Medium(s): {{entry.medium}}
-</p>
-<p>
-    Access: {{entry.access}}
-</p>
-<p> 
-   Narrator: {{ entry.narrator }}
-</p>
-<p> 
-    Date: {{ entry.month }} {{ entry.day }}, {{entry.year}}
-</p>
-<p>
-    Link: {{ entry.link }}
-</p>
-<p>
-    Location Tags: {{entry.location}}
-</p>
-<p>
-    Topic Tags: {{entry.topic}}
-</p>
-<p>
-    Description: {{ entry.description }}
-</p>
+<html>
+    <div class="topnav">
+        <a href="/database/home">Home</a>
+        <a href="/database/database-search">Database Search</a>
+        <a href="/database/how-to">How To</a>
+        <a href="/database/about">About</a>
+      </div>   
 
-<button><a href="{% url 'database-search' %}"> Back To Database Search </a></button>
-<p>Note that this will clear your selections. To see your filtered list, just press "back."</p>
+    <p>
+        Entry ID: {{ entry.id }}
+    </p>
+    <p>
+        Insitution: {{ entry.institution }}
+    </p>
+    <p>
+        Medium(s): {{entry.medium}}
+    </p>
+    <p>
+        Access: {{entry.access}}
+    </p>
+    <p> 
+       Narrator: {{ entry.narrator }}
+    </p>
+    <p> 
+        Date: {{ entry.month }} {{ entry.day }}, {{entry.year}}
+    </p>
+    <p>
+        Link: {{ entry.link }}
+    </p>
+    <p>
+        Location Tags: {{entry.location}}
+    </p>
+    <p>
+        Topic Tags: {{entry.topic}}
+    </p>
+    <p>
+        Description: {{ entry.description }}
+    </p>
+    
+    <button><a href="{% url 'database-search' %}"> Back To Database Search </a></button>
+    <p>Note that this will clear your selections. To see your filtered list, just press "back."</p>
+</html>

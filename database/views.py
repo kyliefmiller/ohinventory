@@ -12,3 +12,12 @@ def entry_list(request):
 
 def single_entry(request, id=None):
     return render(request, 'single-entry.html', {'entry': OHEntry.objects.get(pk=id)}) 
+
+def home_page(request):
+    return render(request, 'home-page.html')
+
+def howto_page(request):
+    return render(request, 'howto.html')
+
+def about_page(request):
+    return render(request, 'about.html')

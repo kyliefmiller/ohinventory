@@ -1,15 +1,17 @@
 <html>
 
+<div class="topnav">
+    <a href="/database/home">Home</a>
+    <a href="/database/database-search">Database Search</a>
+    <a href="/database/how-to">How To</a>
+    <a href="/database/about">About</a>
+  </div>
+
 <header>Southwest Oral Histories</header>
 
 <body>
-
-
     <form method="get">
         {{ filter.form.as_p }}
-
-        
-
         <button type="submit">Search</button>
 
         <button><a href="{% url 'database-search' %}"> Clear selections </a></button>
