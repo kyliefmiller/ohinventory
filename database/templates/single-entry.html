@@ -22,7 +22,15 @@
        Narrator: {{ entry.narrator }}
     </p>
     <p> 
-        Date: {{ entry.month }} {{ entry.day }}, {{entry.year}}
+        {% if entry.day is None and entry.month is None and entry.year is None %}
+            Date Unknown
+        {% elif entry.day is None and entry.month is None %}
+            Date: {{entry.year}}
+        {% elif entry.day is None %}
+            Date: {{ entry.month }} {{entry.year}}
+        {% else %}
+            Date: {{ entry.month }} {{ entry.day }}, {{entry.year}}
+        {% endif %}
     </p>
     <p>
         Link: {{ entry.link }}

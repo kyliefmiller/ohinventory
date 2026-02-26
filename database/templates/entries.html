@@ -18,27 +18,22 @@
     </form>
 
     <ul>
-
-        
-
+        {{ filter.qs.count }} Oral Histories Found
             <table> 
-                <thead>
-                    <th>Narrator</th>
-                    <th>Year</th>
-                </thead>
                 {% for entry in filter.qs %}
                     <table>
                         <tr>
-                            <td> {{ entry.narrator}} </td>
-                            <td> - {{ entry.year }} </td>
+                            <td> {{entry.institution}} </td>
+                            <td> - {{ entry.narrator}} </td>
+                            {% if entry.year is None %}
+                                <td> - No Date </td>
+                            {% else %}
+                                <td> - {{ entry.year }} </td>
+                            {% endif %}
                             <td> <button><a href="/database/oral-history/{{entry.id}}"> See more </a></button> </td>
                         </tr> 
                     </table> 
             </table>
-
-        {% empty %}
-
-            <li> No matching oral history. </li>
         
         {% endfor %}
     </ul>

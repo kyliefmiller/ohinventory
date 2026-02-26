@@ -18,7 +18,7 @@ def get_choices_for_field(model, field_name):
 
 class EntryFilter(django_filters.FilterSet):
 
-    institution = django_filters.ChoiceFilter(choices=OHEntry.Institution.choices, lookup_expr='exact', empty_label='Any')
+    institution = django_filters.MultipleChoiceFilter(choices=OHEntry.Institution.choices, widget=CheckboxSelectMultiple)
     medium = django_filters.MultipleChoiceFilter(
         choices=get_choices_for_field(OHEntry, 'medium'),
         method='filter_by_comma_separated',
