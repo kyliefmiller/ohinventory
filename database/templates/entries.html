@@ -1,42 +1,119 @@
-<html>
+<html style="background-color:rgb(255, 255, 255);">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace.js" ></script>
+        <style>
+            .hover-link {
+                text-decoration: none; 
+            }
+            .hover-link:hover {
+                text-decoration: underline; 
+            }
 
-<div class="topnav">
-    <a href="/database/home">Home</a>
-    <a href="/database/database-search">Database Search</a>
-    <a href="/database/how-to">How To</a>
-    <a href="/database/about">About</a>
-  </div>
 
-<header>Southwest Oral Histories</header>
-
+        </style>
+    </head>
+<div style="background-color:rgb(0, 132, 255); margin: 0; border: 2px solid black"> 
+    <header style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:300%; text-align:center; padding-top:20; padding-bottom:10;">Southwest Oral Histories</header>
+    <div style="background-color: rgb(0, 132, 255); padding-bottom:20;">
+        <div style="display:flex; align-items:center; height:2rem;
+        font-size:20; background-color:rgb(226, 233, 235); height:50px; width:520; align-items:center; 
+        text-align:center; margin:auto;"> 
+            <ul class="no-indent" style="padding:15;">
+            <a class="hover-link" href="/database/home" style="color:black">Home</a> &nbsp;|&nbsp; 
+            <a class="hover-link" href="/database/database-search" style="color:black">Database Search</a>  &nbsp;|&nbsp; 
+            <a class="hover-link" href="/database/how-to" style="color:black">How To</a>  &nbsp;|&nbsp;
+            <a class="hover-link" href="/database/about" style="color:black">About</a> &nbsp;|&nbsp;
+            <a class="hover-link" href="/database/contribute" style="color:black">Contribute</a> </ul>
+    
+    </div></div></div>
+<h1 style="text-align:center">Database Search</h1>
 <body>
-    <form method="get">
-        {{ filter.form.as_p }}
-        <button type="submit">Search</button>
+    <p style="text-align:center; font-size: 20;">
+        Note: All fields are optional!
+    </p>
 
-        <button><a href="{% url 'database-search' %}"> Clear selections </a></button>
+    <form method="get">
+        <p style="margin-bottom:3; font-size: 16">
+            <b>Institution</b> <i>(You May Select Multiple)</i>:
+        </p>
+        <sl-select name="Institution" placeholder="Click to select" multiple clearable>
+            {% for institution in institution_choices %}
+                <sl-option value="{{institution}}">{{institution}}</sl-option>
+            {% endfor %}
+        </sl-select>
+        <p style="margin-bottom:3; font-size: 16">
+            <b>Medium</b> <i>(You May Select Multiple):</i>
+        </p>
+        <sl-select name="Medium" placeholder="Click to select" multiple clearable>
+            {% for medium in medium_choices %}
+                <sl-option value="{{medium}}">{{medium}}</sl-option>
+            {% endfor %}
+        </sl-select>
+        <p style="margin-bottom:3; font-size: 16">
+            <b>Access:</b> <sl-select name="Access" placeholder="Click to select" clearable>
+                <sl-option value="exclude">Exclude All Low Quality & Restricted</sl-option>
+                {% for access in access_choices %}
+                    <sl-option value="{{access}}">{{access}}</sl-option>
+                {% endfor %}
+            </sl-select>
+        </p>
+        
+        <br>
+        <label for="Narrator"> <b>Narrator</b> <i>(any part of the name is fine)</i>:</label>  <input type="text" id="Narrator" name="Narrator">
+        <p>
+            <b>Date Created</b> <i>(enter years)</i>:
+        </p>
+        <label for="Start Year"> After  </label>  <input type="text" id="Start Year" name="Start Year">
+        <label for= "End Year" > and/or before </label>  <input type="text" id="End Year" name="End Year">
+        <p style="margin-bottom:3; font-size: 16">
+            <b>Location</b> <i>(You May Select Multiple):</i>
+        </p>
+        <sl-select name="Location" placeholder="Click to select" help-text="Note that many entries do not have tagged locations" multiple clearable>
+            {% for location in location_choices %}
+                <sl-option value="{{location}}">{{location}}</sl-option>
+            {% endfor %}
+        </sl-select>
+        <p style="margin-bottom:3; font-size: 16">
+            <b>Topic</b> <i>(You May Select Multiple):</i>
+        </p>
+        <sl-select name="Topic" placeholder="Click to select" help-text="Note that many entries do not have tagged topics" multiple clearable>
+            {% for topic in topic_choices %}
+                <sl-option value="{{topic}}">{{topic}}</sl-option>
+            {% endfor %}
+        </sl-select>
+        <br>
+        <label for="Description"><b>Description</b> contains:</label>  <input type="text" id="Description" name="Description">
+        <br>
+        <br>
+
+        
+        
+        <sl-button type="submit" size="small" pill>Search</sl-button>
+
+        <sl-button size="small" pill><a href="{% url 'database-search' %}" style="text-decoration:none; color:black;"> Clear Selections </a></sl-button>
     </form>
 
-    <ul>
-        {{ filter.qs.count }} Oral Histories Found
-            <table> 
-                {% for entry in filter.qs %}
-                    <table>
-                        <tr>
-                            <td> {{entry.institution}} </td>
-                            <td> - {{ entry.narrator}} </td>
+    <sl-divider></sl-divider>
+    <ul style="font-style:italic; font-size:24; margin-bottom:10; text-align: center;">
+        {{ result.count }} Oral Histories Found </ul>
+        
+            {% for entry in result %}
+                <table>
+                      <tr>
+                            <td> * {{entry.institution}} </td>
+                            <td> -- {{ entry.narrator}} </td>
                             {% if entry.year is None %}
-                                <td> - No Date </td>
+                                <td> -- No Date -- </td>
                             {% else %}
-                                <td> - {{ entry.year }} </td>
+                                <td> -- {{ entry.year }} -- </td>
                             {% endif %}
-                            <td> <button><a href="/database/oral-history/{{entry.id}}"> See more </a></button> </td>
+                            <td> <sl-button variant="neutral" size="small" pill><a style="text-decoration:none; color:white" href="/database/oral-history/{{entry.id}}"> See more </a></sl-button> </td>
                         </tr> 
                     </table> 
-            </table>
+            
         
         {% endfor %}
-    </ul>
 </body>
 
 

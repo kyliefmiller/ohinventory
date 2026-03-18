@@ -1,8 +1,8 @@
-from django.contrib import admin
+from django.contrib import admin # type: ignore
 
 from . models import OHEntry
 
-import data_wizard
+import data_wizard # type: ignore
 
 admin.site.register(OHEntry)
 

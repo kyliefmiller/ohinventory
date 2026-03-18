@@ -1,14 +1,143 @@
-<html>
-    <div class="topnav">
-        <a href="/database/home">Home</a>
-        <a href="/database/database-search">Database Search</a>
-        <a href="/database/how-to">How To</a>
-        <a href="/database/about">About</a>
-      </div>
+<html style="background-color:rgb(255, 255, 255);">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace.js" ></script>
+        <style>
+            .hover-link {
+                text-decoration: none; 
+            }
+            .hover-link:hover {
+                text-decoration: underline; 
+            }
+            
+            sl-details::part(header) {
+                font-size: 24;
+                border-width: 3;
+                border-color: gray;
+                border-style:inherit;
+                background: rgb(255, 255, 255);
+                color: rgb(10, 9, 9);
+                border-bottom-left-radius: 10;
+                border-bottom-right-radius: 10;
+            }
+
+            sl-details[open]::part(header) {
+                font-size: 24;
+                border-width: 3;
+                border-color: gray;
+                border-style:inherit;
+                background: rgb(18, 17, 17);
+                color: rgb(184, 184, 184);
+                border-bottom-left-radius: 10;
+                border-bottom-right-radius: 10;
+            }
+
+
+        </style>
+    </head>
+<div style="background-color:rgb(0, 132, 255); margin: 0; border: 2px solid black"> 
+    <header style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:300%; text-align:center; padding-top:20; padding-bottom:10;">Southwest Oral Histories</header>
+    <div style="background-color: rgb(0, 132, 255); padding-bottom:20;">
+        <div style="display:flex; align-items:center; height:2rem;
+        font-size:125%; background-color:rgb(226, 233, 235); height:50px; width:520; align-items:center; 
+        text-align:center; margin:auto;"> 
+            <ul class="no-indent" style="padding:15;">
+            <a class="hover-link" href="/database/home" style="color:black">Home</a> &nbsp;|&nbsp; 
+            <a class="hover-link" href="/database/database-search" style="color:black">Database Search</a>  &nbsp;|&nbsp; 
+            <a class="hover-link" href="/database/how-to" style="color:black">How To</a>  &nbsp;|&nbsp;
+            <a class="hover-link" href="/database/about" style="color:black">About</a> &nbsp;|&nbsp;
+            <a class="hover-link" href="/database/contribute" style="color:black">Contribute</a> </ul>
     
+    </div></div></div>
 
+<h1>About</h1>
 
+<body>
+    <sl-details summary="Meet Kylie Miller - Project Creator">
+        <p>Kylie Miller completed this project while working as the Administrative Assistant for the Southwest 250-150 initiative,
+            using the project as her capstone to earn her Masters Degree in Public History at the University of Colorado, Denver.
+            Previously, she earned her BA in Anthropology from Stanford University and worked as a middle and high school social studies teacher 
+            outside Denver. She then to the sphere of public history through the school programs at History Colorado. She now lives locally in Durango
+            with her husband and son and works with the education programming at the Animas Museum.
+        </p>
+    </sl-details>
+    <sl-details summary="About Southwest 250-150">
+        <p>2026 marks not only the 250th year since the establishment of the United States but also the 150th year since Colorado's statehood.
+            To commemorate this, there is a statewide commission as well as regional efforts, including in the Southwest region of the state.
+            This region includes the counties of Archuleta, Dolores, Hinsdale, La Plata, Montezuma, Ouray, San Juan, and San Miguel, and an 
+            oral histories project was part of its core initiatives. You can learn more about the 250-150 efforts in the Southwest at
+            <a href="colorado150southwest.org" target="_blank">colorado150southwest.org.</a>
+        </p>
+    </sl-details>
+    <sl-details summary="The Concept of Oral History">
+        <p>
+            <li>Give some definition, background, and history of oral history</li>
+            <li>Discuss nature of memory and how oral histories, like all sources, are a story from one person's perspective. They also 
+                reflect the perspective of the interviewer who guided the conversation.
+            </li>
 
+        </p>
+    </sl-details>
+    <sl-details summary="The Data: Overview">
+        <p>This inventory includes a compilation of data gathered from local institutions wiht oral histories and therefore reflects the diversity
+            of the institutions that provided the information. The amount of information associated with each oral history varied depending on the 
+            institution and is therefore why not all entries are complete. Similarly, the organization of this data varied by institution, meaning the 
+            data categories had to be created based on commonalities among the information given in order to create a uniform inventory. That said,
+            if an institution provided information that was not associated with the inventory categories, that information was put into the description
+            category in order to not be lost.
+            <br><br>
+            It is important to note that the extent of this inventory attempts to reflect oral histories, which generally refers to interviews with people
+            regarding their personal knowledge and experiences. Therefore, some information provided by institutions that did not fit this definition was not 
+            included in the database. Examples of material not included includes recordings of academic or historical lectures, newspaper articles, television ads or public service 
+            announcements, or meeting recordings. Some items in the inventory still may be outside of the scope of an oral history despite the effort to remove some.
+            <br><br>
+            Thank you to all of the people at the institutions who provided information to complete the inventory - this could not exist without you!
+        </p>
+    </sl-details>
+    <sl-details summary="The Data: Location Tagging">
+        <p>The scope of the counties involved in the Southwest 250-150 narrowed down the desired locations to include in the inventory. That said, oral histories themselves
+            are not constrained to one location and therefore do not follow the contraints of the project, addressing locations outside of the eight counties.
+            It was decided to work to tag all locations mentioned within Colorado, as the data for those oral would not need to be adjusted in case the project expanded. 
+            That said, oral histories in collections that were clearly outside of the geographic scope of this project were removed from the database, including
+            those from the Center of Southwest Studies discussing forestry or Indigenous people in distant states. Some oral histories in the inventory may still be outside 
+            of the geographic scope, but with unknown information most were kept.
+            <br><br>
+            Using the Southwest 250-150 counties as boundaries also meant that it was important to categorize oral history locations by county to connect counties to oral histories.
+            Therefore, any town or city tagged included an associated county tag. This was particularly important when considering smaller or historic towns, as it was decided
+            to not tag all small or historic towns but instead just tag the county. This decision was made to help limit the sorting options, though it could be changed if desired.
+            <br><br>
+            Many oral histories in the database do not actually have any location tags because there would be no way to know locations without listening to the oral history.
+            Also, there may be some locations mentioned within oral histories that were not originally known. If you would like to help make the data about locations more complete,
+            please see the <a href="/database/contribute" style="color:blue">contribute page</a>!</p>
+    </sl-details>
+    <sl-details summary="The Data: Topic Tagging">
+        <p>Topic tagging is an inherently arbitrary process. However, it is helpful to make common concepts consistent. For instance, one searching "mining" would have 
+            to search anything related to mining - mining, mines, miners, etc. - to find results. With a tag, everything can be consistent and bundled in a group.
+            That said, there is a balance in choosing the topics to tag. As part of the purpose is to make the data more simple and searchable, tagging every single topic
+            would defeat the purpose by overcomplicating the search. But even with a large number of topics chosen to tag, it still feels like some are not getting acknowledged.
+            In the end, topic tags hopefully represent the major topics of the region and its history and are always available for further refinement. See the description tab 
+            for more information about the description, which can be searched to attempt to find topics not included in tags.
+            <br><br>
+            As mentioned with the location tags, many oral histories in the database do not actually have any topic tags because there would be no way to know topics without listening to the oral history.
+            Also, there may be some topics mentioned within oral histories that were not originally known. If you would like to help make the data about topics more complete,
+            please see the <a href="/database/contribute" style="color:blue">contribute page</a>!</p>
+    </sl-details>
+    <sl-details summary="The Data: Description">
+        <p>Some institutions provided brief descriptions associated with their oral histories included in the description category. Some of these descriptions were as long as 
+            transcript summaries, while some simply state the narrator or a brief topic. As mentioned in the overview, any extra information provided by an institution that did 
+            not fit the categories of the inventory were included in the description category. In general, one can try to search the description for information not included in tags
+            or other general searches. 
+            <br><br>
+            Like location and topic tags, not all oral histories have associated descriptions. If you would like to help make the descriptions more complete,
+            please see the <a href="/database/contribute" style="color:blue">contribute page</a>!
+        </p>
+    </sl-details>
+    <sl-details summary="The Technology">
+        <p>The database search function was created using Django. The source code for the database search and the site as a whole can be found through
+            <a href="https://github.com/kyliefmiller/ohinventory" style="color:blue" target="_blank">this GitHub link</a>.
+        </p>
+    </sl-details>
+</body>
 
 
 

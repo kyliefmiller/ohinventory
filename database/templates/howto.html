@@ -1,13 +1,154 @@
-<html>
-    <div class="topnav">
-        <a href="/database/home">Home</a>
-        <a href="/database/database-search">Database Search</a>
-        <a href="/database/how-to">How To</a>
-        <a href="/database/about">About</a>
-      </div>
-    
-<header>instructions</header>
+<html style="background-color:rgb(255, 255, 255);">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace.js" ></script>
+        <style>
+            .hover-link {
+                text-decoration: none; 
+            }
+            .hover-link:hover {
+                text-decoration: underline; 
+            }
 
+            sl-details::part(header) {
+                font-size: 24;
+                border-width: 3;
+                border-color: red;
+                border-style:inherit;
+                background: rgb(255, 255, 255);
+                color: rgb(10, 9, 9);
+                border-bottom-left-radius: 10;
+                border-bottom-right-radius: 10;
+            }
+
+            sl-details[open]::part(header) {
+                font-size: 24;
+                border-width: 3;
+                border-color: gray;
+                border-style:inherit;
+                background: rgb(18, 17, 17);
+                color: rgb(184, 184, 184);
+                border-bottom-left-radius: 10;
+                border-bottom-right-radius: 10;
+            }
+
+
+        </style>
+    </head>
+<div style="background-color:rgb(0, 132, 255); margin: 0; border: 2px solid black"> 
+    <header style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:300%; text-align:center; padding-top:20; padding-bottom:10;">Southwest Oral Histories</header>
+    <div style="background-color: rgb(0, 132, 255); padding-bottom:20;">
+        <div style="display:flex; align-items:center; height:2rem;
+        font-size:125%; background-color:rgb(226, 233, 235); height:50px; width:520; align-items:center; 
+        text-align:center; margin:auto;"> 
+            <ul class="no-indent" style="padding:15;">
+            <a class="hover-link" href="/database/home" style="color:black">Home</a> &nbsp;|&nbsp; 
+            <a class="hover-link" href="/database/database-search" style="color:black">Database Search</a>  &nbsp;|&nbsp; 
+            <a class="hover-link" href="/database/how-to" style="color:black">How To</a>  &nbsp;|&nbsp;
+            <a class="hover-link" href="/database/about" style="color:black">About</a> &nbsp;|&nbsp;
+            <a class="hover-link" href="/database/contribute" style="color:black">Contribute</a> </ul> 
+    
+    </div></div></div>
+    
+<h1 style="text-align: center;">How To Use The Database Search</h1>
+<p style="text-align: center;">For more details and explanations about how the search features work, refer to the information on this page.</p>
+<h3>General Notes</h3>
+<p>
+    It is important to note that not all oral history entries have complete data. Therefore, searching in categories like location, topic, and description
+        might not actually show a comprehensive set of results for oral histories that address your search. <i>If you would like to help make the database more complete,
+            please see the <a href="/database/contribute" style="color:blue">contribute page</a>!</i>
+        <br><br>
+    When you choose options from multiple categories, it will show the entries that match those combined features. For instance,
+    if you choose "Mancos Public Library" as the institution and "Durango" for location, it will show all entries at Mancos Public
+    Library that have the "Durango" location tag. However, when you select multiple options <i>within</i> a category it will show all of those results. For instance, if you choose
+        "Railroads" and "Ranching" in the topic section, it will show entries about railroads even if they do not have the ranching tag.
+    
+    
+</p>
+
+<h4 style="text-align: center; font-size: 18;">Click on the tabs below to get more specific guidance for each search category</h4>
+
+<sl-details summary="Institution">
+    <p>Use this filter if you are only interested in particular places that house oral histories - for instance, institutions close to where you live. <br>
+        When searching for institution, it will show results for <i>all</i> of the institutions you select. 
+    <br><br>
+    All oral histories are associated with an institution and therefore have data for this category.
+    </p>
+</sl-details>
+
+<sl-details summary="Medium">
+    <p>All oral histories have data denoting their medium. Some include multiple mediums - for instance, audio files that have been transcribed and 
+        therefore have an associated transcript. If you select both "Audio" and "Transcript," it will show results for any oral history that has audio AND any 
+        oral history that has a transcript, even if it is not have both a transcript and audio.
+        <br><br> You may use this search feature if, for instance, you only want to read rather than listen to an oral history, meaning you can search for 
+        only files that have transcripts.
+    </p>
+</sl-details>
+
+<sl-details summary="Access">
+    <p>
+        The following defines each type of "access" and how this will search. You will likely choose either "Exclude All Low Quality & Restricted" or "Online"
+        <li style="padding-bottom: 3;"><b>"Exclude All Low Quality & Restricted"</b> - This will show all results except for those tagged as having restricted 
+        access or low quality recordings that are often inaudible. All of these oral histories are marked either "Contact Institution" or "Online."</li>
+        <li style="padding-bottom: 3;"><b>"Contact Instituion"</b> - There is no link for you to directly access this. It is possible that the institution can send you files digitally, 
+        or you will have to visit the institution to access the oral history. You will have to contact them to find out. Contact information is provided 
+        once you click "See More" on an oral history result. </li>
+        <li style="padding-bottom: 3;"><b>"Low Quality"</b> - The institution has indicated that oral history is difficult to hear or understand. This would only
+        make sense to search if you are interested in helping institutions see if they can discern information on these recordings.</li>
+        <li style="padding-bottom: 3;"><b>"Online"</b> - There is a link to access this online - find the link when you click "See More."</li>
+        <li style="padding-bottom: 3;"><b>"Restricted (no release)"</b> - The narrator has not given permission for people to access the oral history. It is still possible 
+        that the institution will obtain permission from the person or descendent at some point in the future. If you are particularly interested in oral histories 
+        with this marking, you can try to contact the institution to see.</li>
+    </p>
+</sl-details>
+
+<sl-details summary="Narrator">
+    <p>This will search the narrators to see if your search is in any part of their name. For instance, typing "Will" will come up with "Will," "William," "Willy," etc. </p>
+</sl-details>
+
+<sl-details summary="Date">
+    <p>This category includes the date of the recording/interview, so the topic of the oral history often relates to dates much earlier. Note that not all 
+        oral histories have known dates, and some of the dates are estimated.
+        <br><br>
+        If you want to narrow down your search by date, you do not have to enter a year for both spaces. For instance, if you want to see all oral histories created 
+        after 1970, you can put 1970 in the box next to "After" and no date in the next box. On the other hand, if you want to see all oral histories recorded 
+        <i>before</i> 1970, you can put 1970 in the box next to "before" and no date in the first box. You can also put years in both boxes to create a range, like 
+        all oral histories created between 1990 and 2000. If you want all oral histories created in a specific year, just type the same year in both boxes.
+    </p>
+</sl-details>
+
+<sl-details summary="Location">
+    <p>For more information about how location tags were created, see the <a href="/database/about" style="color:blue" target="_blank">about page</a>. 
+       <br><br>
+    When searching locations, it will show results including <i>any</i> of the locations you choose. For instance, if you choose "Telluride" and "Rico," it will 
+    show all oral histories that mention "Telluride" <i>and</i> all oral histories that mention "Rico," even if they do not mention both.
+    <br><br>
+    Note that many oral histories do not have locations associated with them, so this search will not provide a comprehensive list. If you would like to help make the data about locations more complete,
+    please see the <a href="/database/contribute" style="color:blue">contribute page</a>!
+    </p>
+</sl-details>
+
+<sl-details summary="Topic">
+    <p>For more information about how topic tags were created, see the <a href="/database/about" style="color:blue" target="_blank">about page</a>. 
+        <br><br>
+     When searching topic, it will show results including <i>any</i> of the topics you choose. For instance, if you choose "Crime" and "Medicine," it will 
+     show all oral histories that relate to "Crime" <i>and</i> all oral histories that relate to "Medicine," even if they do not relate to both.
+     <br><br>
+     Note that many oral histories do not have topics associated with them, so this search will not provide a comprehensive list. If you would like to help make the data about locations more complete,
+     please see the <a href="/database/contribute" style="color:blue">contribute page</a>!</p>
+</sl-details>
+
+<sl-details summary="Description">
+    <p>Some institutions provided brief descriptions associated with their oral histories included in the description category. Some of these descriptions were as long as 
+        transcript summaries, while some simply state the narrator or a brief topic. Any extra information provided by an institution that did 
+        not fit the categories of the inventory were included in the description category. In general, one can try to search the description for information not included in tags
+        or other general searches. 
+        <br><br>
+        When searching descriptions, the search will see if what you type in your search matches content in the description category. 
+        <br><br>
+        Like location and topic tags, not all oral histories have associated descriptions. If you would like to help make the descriptions more complete,
+        please see the <a href="/database/contribute" style="color:blue">contribute page</a>!</p>
+</sl-details>
 
 
 
