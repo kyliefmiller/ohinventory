@@ -42,6 +42,11 @@ def entry_list(request):
             for location in entry.location.split(","):
                 location_choices.add(location.strip())
     location_choices = sorted(list(location_choices))
+    location_choices = ['Archuleta County', 'Bayfield', 'Cortez', 'Dolores', 'Dolores County', 'Dove Creek',
+                        'Durango', 'Hesperus', 'Hinsdale County', 'Ignacio', 'La Plata County',
+                        'Lake City', 'Mancos', 'Montezuma County', 'Ophir', 'Ouray', 'Ouray County', 'Pagosa Springs',
+                        'Pandora',' Placerville', 'Rico', 'Ridgway', 'San Juan County', 'San Miguel County',
+                         'Silverton', 'Southern Ute Reservation', 'Telluride', 'Towaoc', 'Ute Mountain Ute Reservation' ]
     
     ##topic
     topic_choices = set()
