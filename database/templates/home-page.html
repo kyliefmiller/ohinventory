@@ -11,36 +11,52 @@
             .hover-link:hover {
                 text-decoration: underline; 
             }
+            body {
+                padding:0;
+                margin:0;
+            }
 
         </style>
     </head>
-<div style="background-color:rgb(0, 132, 255); margin: 0; border: 2px solid black"> 
-    <header style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:300%; text-align:center; padding-top:20; padding-bottom:10;">Southwest Colorado Oral Histories</header>
-    <div style="background-color: rgb(0, 132, 255); padding-bottom:20;">
-        <div style="display:flex; align-items:center; height:2rem;
-        font-size:20; background-color:rgb(226, 233, 235); height:50px; width:520; align-items:center; 
-        text-align:center; margin:auto;"> 
-            <ul class="no-indent" style="padding:15;">
-            <a class="hover-link" href="/home" style="color:black">Home</a> &nbsp;|&nbsp; 
-            <a class="hover-link" href="/database-search" style="color:black">Database Search</a>  &nbsp;|&nbsp; 
-            <a class="hover-link" href="/how-to" style="color:black">How To</a>  &nbsp;|&nbsp;
-            <a class="hover-link" href="/about" style="color:black">About</a> &nbsp;|&nbsp;
-            <a class="hover-link" href="/contribute" style="color:black">Contribute</a> </ul>
+    <div style="background-color:var(--sl-color-primary-600); margin: 0; padding:0; color:var(--sl-color-primary-50); width:100%"> 
+        <header style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:50; text-align:center; padding-top:20; padding-bottom:10;
+        text-shadow:2px 2px 3px black">Southwest Colorado Oral Histories</header>
+        <div style="background-color:var(--sl-color-primary-600); padding-bottom:20; box-shadow:var(--sl-shadow-large)">
+            <div style="display:flex; align-items:center; height:2rem;
+            font-size:20; background-color:var(--sl-color-primary-50); height:50px; width:550px; align-items:center; 
+            text-align:center; margin:auto; color:black; box-shadow:0 0 4px 1px;"> 
+                <ul class="no-indent" style="padding:15;">
+                <a class="hover-link" href="/home" style="color:black">Home</a> &nbsp;|&nbsp; 
+                <a class="hover-link" href="/database-search" style="color:black">Database Search</a>  &nbsp;|&nbsp; 
+                <a class="hover-link" href="/how-to" style="color:black">How To</a>  &nbsp;|&nbsp;
+                <a class="hover-link" href="/about" style="color:black">About</a> &nbsp;|&nbsp;
+                <a class="hover-link" href="/contribute" style="color:black">Contribute</a> </ul>
+        
+        </div></div></div>
+    <div style="text-align: center; margin-left:30px; margin-right:30px; line-height:var(--sl-line-height-normal);">
+    <h1 style="text-align: center; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:36px; line-height:var(--sl-line-height-dense);">Welcome to the Southwest Colorado Oral Histories Inventory!</h1>
     
-    </div></div></div>
-
-    <h1 style="text-align: center; font-family:Verdana, Geneva, Tahoma, sans-serif;">Welcome to the Southwest Colorado Oral Histories Inventory!</h1>
-    <body style="text-align: center;">
-        Through Southwest Colorado's 250-150 initiative, this inventory was created to compile all of the oral histories 
-        that tell stories about the region. This region, as defined through the 250-150 initiative, spans the counties of Archuleta,
-        Dolores, Hinsdale, La Plata, Montezuma, Ouray, San Juan, and San Miguel in Southwest Colorado. 
+    <body style="font-size:20px; font-family:var(--sl-font-sans);">
+        As a part of Southwest Colorado's <a href="https://www.colorado150southwest.org/" target="_blank" style="color:var(--sl-color-primary-700)">250-150 initiative</a>, this inventory was created to compile a list of the oral histories 
+        that tell stories about the region (Archuleta, Dolores, Hinsdale, La Plata, Montezuma, Ouray, San Juan, and San Miguel counties). 
         <br><br>
-        Through this website, one can search the inventory to find oral histories and learn more about the region. We hope this resource 
+        <div style="align-items: center;">
+            <img src="{% static 'region.png' %}" width="270px">
+        </div>  
+        <br>
+        Use this website to search the inventory and find records about oral histories. With this information, one can 
+        locate the oral histories and sometimes even access them online to learn more about the region. We hope this resource 
         can be helpful to researchers and anybody else interested in learning through oral histories.
         <br><br>
         <sl-button style="align-self: center;" href="/database-search" size="large" pill variant="primary">Start Finding Oral Histories!</sl-button>
-
     </body>
+    <br>
+    <br>
+    <div style="align-items: center;">
+    <img src="{% static 'logo.jpg' %}" width="300px">
+</div>    
+</div>
+    
 
 
 

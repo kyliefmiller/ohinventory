@@ -1,4 +1,5 @@
-<html style="background-color:rgb(255, 255, 255);">
+{% load static %}
+<html style="background-color:rgb(255, 255, 255); font-family:var(--sl-font-sans)">
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
         <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace.js" ></script>
@@ -8,6 +9,10 @@
             }
             .hover-link:hover {
                 text-decoration: underline; 
+            }
+            body {
+                padding:0;
+                margin:0;
             }
 
             sl-details::part(header) {
@@ -35,33 +40,33 @@
 
         </style>
     </head>
-<div style="background-color:rgb(0, 132, 255); margin: 0; border: 2px solid black"> 
-    <header style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:300%; text-align:center; padding-top:20; padding-bottom:10;">Southwest Colorado Oral Histories</header>
-    <div style="background-color: rgb(0, 132, 255); padding-bottom:20;">
-        <div style="display:flex; align-items:center; height:2rem;
-        font-size:20; background-color:rgb(226, 233, 235); height:50px; width:520; align-items:center; 
-        text-align:center; margin:auto;"> 
-            <ul class="no-indent" style="padding:15;">
-            <a class="hover-link" href="/home" style="color:black">Home</a> &nbsp;|&nbsp; 
-            <a class="hover-link" href="/database-search" style="color:black">Database Search</a>  &nbsp;|&nbsp; 
-            <a class="hover-link" href="/how-to" style="color:black">How To</a>  &nbsp;|&nbsp;
-            <a class="hover-link" href="/about" style="color:black">About</a> &nbsp;|&nbsp;
-            <a class="hover-link" href="/contribute" style="color:black">Contribute</a> </ul>
-    
-    </div></div></div>
-
-    <h1>Contribute</h1>
-
-    <body style="font-size: 20;">
-        This is an ongoing project and we love any help we can get to make the database as complete and accurate as possible. Click on the options below to see more about how you can help!
-        <br>
-        <br>
+    <div style="background-color:var(--sl-color-primary-600); margin: 0; padding:0; color:var(--sl-color-primary-50); width:100%"> 
+        <header style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:50; text-align:center; padding-top:20; padding-bottom:10;
+        text-shadow:2px 2px 3px black">Southwest Colorado Oral Histories</header>
+        <div style="background-color:var(--sl-color-primary-600); padding-bottom:20; box-shadow:var(--sl-shadow-large)">
+            <div style="display:flex; align-items:center; height:2rem;
+            font-size:20; background-color:var(--sl-color-primary-50); height:50px; width:550px; align-items:center; 
+            text-align:center; margin:auto; color:black; box-shadow:0 0 4px 1px;"> 
+                <ul class="no-indent" style="padding:15;">
+                <a class="hover-link" href="/home" style="color:black">Home</a> &nbsp;|&nbsp; 
+                <a class="hover-link" href="/database-search" style="color:black">Database Search</a>  &nbsp;|&nbsp; 
+                <a class="hover-link" href="/how-to" style="color:black">How To</a>  &nbsp;|&nbsp;
+                <a class="hover-link" href="/about" style="color:black">About</a> &nbsp;|&nbsp;
+                <a class="hover-link" href="/contribute" style="color:black">Contribute</a> </ul>
         
-        <sl-details summary="My institution has oral histories and is not in the database!">
-            <p style="text-align: center";><b>We would love to include your oral histories!</b>
-                <br><br> Please send an email to <a href="mailto:colorado150southwest@gmail.com">colorado150southwest@gmail.com</a> with the name and contact information for your institution
+        </div></div></div>
+    
+    <h1 style="text-align: center;">Contribute</h1>
+    <div style="padding-left:15px; padding-right: 15px; line-height:var(--sl-line-height-dense);">
+    <body style="font-size:18; ">
+        <p style="font-size:22; padding-left:20px; padding-right:20px; text-align: center; line-height:var(--sl-line-height-dense)">This is an ongoing project and we love any help we can get to make the database as complete and accurate as possible. Click on the options below to see more about how you can help!
+        </p>
+        
+        <sl-details summary="Adding New Oral Histories">
+            <p style="text-align: center";><b style="font-size:24">We want to include your oral histories!</b>
+                <br><br> Please send an email to <a href="mailto:colorado150southwest@gmail.com" style="color:var(--sl-color-primary-700)">colorado150southwest@gmail.com</a> with the name and contact information for your institution
                 and the following information about each oral history. If you don't have all of it, that is fine, but the more information the better! 
-                <li>The medium of the file (audio, video, and/or transcript)</li>
+                <li>The format of the file (audio, video, and/or transcript)</li>
                 <li>The name of the narrator</li>
                 <li>The name of the creator</li>
                 <li>The date the oral history was created</li>
@@ -70,39 +75,28 @@
                 <li>Any other information you think is relevant!</li>
             </p>
         </sl-details>
-        <sl-details summary="My institution has new oral histories we would like to add.">
-            <p>Please send an email to <a href="mailto:colorado150southwest@gmail.com">colorado150southwest@gmail.com</a> with the name and contact information for your institution
-                and the followoing information about each oral history:
-                <li>The medium of the file (audio, video, and/or transcript)</li>
-                <li>The name of the narrator</li>
-                <li>The name of the creator</li>
-                <li>The date the oral history was created</li>
-                <li>A list of any locations discussed in the oral history, including counties</li>
-                <li>A brief description of topics discussed. If desired, you may look at the topic tags created (see the list in the database search) and list any matches. </li>
-                <li>Any other information you think is relevant!</li></p>
+        <sl-details summary="Updating Oral History Details">
+            <p>We would love to have more details about the oral histories and correct any mistakes.
+            Please send an email to <a href="mailto:colorado150southwest@gmail.com" style="color:var(--sl-color-primary-700)">colorado150southwest@gmail.com</a> with the Entry ID (found when you click "See More" next to an
+            entry on the database search) and the associated information you would like to add or correct.</p>
         </sl-details>
-        <sl-details summary="I have more information I would like to add about a specific oral history.">
-            <p>Great! Please send an email to <a href="mailto:colorado150southwest@gmail.com">colorado150southwest@gmail.com</a> with the Entry ID (found when you click "See More" next to an
-            entry on the database search) and the associated information you would like to add.</p>
-        </sl-details>
-        <sl-details summary="I have found a mistake in the information about an oral history.">
-            <p>Thank you for noticing! Please send an email to <a href="mailto:colorado150southwest@gmail.com">colorado150southwest@gmail.com</a> with the Entry ID (found when you click "See More" next to an
-                entry on the database search) and the associated mistake you have identified.</p>
-        </sl-details>
-        <sl-details summary="I would like to help add more information to oral history entries in the database.">
-            <p>Please follow <a href="https://docs.google.com/document/d/1PdBW-PAmujXlV4ny76FKmZldkZijd5AnxdLw_tuauJQ/edit?usp=sharing" target="_blank">this link</a>
+        <sl-details summary="Helping Add Information to Oral History Entries">
+            <p>Please follow <a href="https://docs.google.com/document/d/1PdBW-PAmujXlV4ny76FKmZldkZijd5AnxdLw_tuauJQ/edit?usp=sharing" target="_blank" style="color:var(--sl-color-primary-700)">this link</a>
             for instructions about how to help enhance the inventory.</p>
         </sl-details>
-        <sl-details summary="I would like to create an oral history to be included.">
+        <sl-details summary="Creating New Oral Histories to Add">
             <p>To do this, I recommend you get in touch with local institution like a library or history museum
                  - preferably one already connected to database. (You can see the institutions in the database search.) 
-                 Work with them to create new one, and then send the associated information to <a href="mailto:colorado150southwest@gmail.com">colorado150southwest@gmail.com</a>. (See first option for information to include.)</p>
+                 Work with them to create new one, and then send the associated information to <a href="mailto:colorado150southwest@gmail.com"
+                 style="color:var(--sl-color-primary-700)">colorado150southwest@gmail.com</a>. (See "Adding New Oral Histories" for information to include.)</p>
         </sl-details>
-        <br><br>
-        <p style="text-align: center;"><i>For any other inquiries, please reach out to <a href="mailto:colorado150southwest@gmail.com">colorado150southwest@gmail.com</a></i></p>
-
-
-
-
-
+       <br>
+        <p style="text-align: center; font-size:22; line-height:var(--sl-line-height-denser)"><i>For any other inquiries, please reach out to <a href="mailto:colorado150southwest@gmail.com"
+            style="color:var(--sl-color-primary-700)">colorado150southwest@gmail.com</a></i></p>
+    
+    <br>
+    <div style="text-align: center;">
+        <img src="{% static 'logo.jpg' %}" width="300px">
     </body>
+    </div>  
+</div>
