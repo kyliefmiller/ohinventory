@@ -9,5 +9,5 @@ urlpatterns = [
     path('home', views.home_page),
     path('how-to', views.howto_page),
     path('about', views.about_page),
-    path('contribute', views.contribute_page)
+    path('take-part', views.takepart_page)
 ]

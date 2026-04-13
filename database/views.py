@@ -166,5 +166,5 @@ def howto_page(request):
 def about_page(request):
     return render(request, 'about.html')
 
-def contribute_page(request):
-    return render(request, 'contribute.html')
+def takepart_page(request):
+    return render(request, 'take-part.html')
