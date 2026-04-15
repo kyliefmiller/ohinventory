@@ -42,7 +42,7 @@
 
     <form method="get">
         <p style="margin-bottom:3; font-size: 16">
-            <b>Institution Storing Oral History</b> <i>(You May Select Multiple)</i>:
+            <b>Host Institution</b> <i>(You May Select Multiple)</i>:
         </p>
         <sl-select name="Institution" placeholder="Click to select" multiple clearable>
             {% for institution in institution_choices %}
@@ -74,7 +74,7 @@
         <label for="Start Year"> After  </label>  <input type="text" id="Start Year" name="Start Year">
         <label for= "End Year" > and/or before </label>  <input type="text" id="End Year" name="End Year">
         <p style="margin-bottom:3; font-size: 16">
-            <b>Location Mentioned</b> <i>(You May Select Multiple):</i>
+            <b>Location</b> <i>(You May Select Multiple):</i>
         </p>
         <sl-select name="Location" placeholder="Click to select" help-text="Note that many entries do not have tagged locations" multiple clearable>
             {% for location in location_choices %}
